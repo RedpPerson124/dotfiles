@@ -1,0 +1,63 @@
+exec waybar
+
+
+set $mod Mod4
+
+
+
+
+font pango:monospace 10
+set $term alacritty
+bindsym $mod+Shift+c reload
+bindsym $mod+BackSpace kill
+bindsym $mod+Return exec alacritty
+bindsym $mod+space exec rofi -show drun
+
+
+
+
+for_window [class= ".*"] border normal 2
+
+
+
+
+
+# Focused window
+client.focused   #ffffff #000000 #ffffff #ffffff #ffffff
+# Inactive windows
+client.focused_inactive  #888888 #000000 #888888 #888888 #888888
+client.unfocused #333333 #000000 #333333 #333333 #333333
+client.urgent    #ff0000 #000000 #ff0000 #ff0000 #ff0000
+
+
+
+
+exec_always swaymsg 'gaps bottom current set 3'
+exec_always swaymsg 'gaps right current set 3'
+exec_always swaymsg 'gaps left current set 3'
+
+
+# Toggle maximize on Super+F11
+bindsym $mod+F11 fullscreen toggle
+
+
+
+
+
+
+
+
+
+# Switch to workspace 1–5
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+
+# Move focused window to workspace 1–5
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
