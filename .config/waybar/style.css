@@ -1,3 +1,4 @@
+/* Reset */
 * {
   border: none;
   border-radius: 0;
@@ -5,6 +6,7 @@
   min-height: 0;
 }
 
+/* Waybar window */
 window#waybar {
   background-color: rgba(0, 0, 0, 0.9);
   color: #ffffff;
@@ -13,43 +15,30 @@ window#waybar {
 /* Workspaces */
 #workspaces button {
   color: #ffffff;
-  padding: 4px;
+  padding: 4px 10px;          /* wider = rectangle */
   margin: 0 2px;
-  background-color: transparent;
-  border: 1.5px solid transparent; /* default: no border */
-  border-radius: 3;
+  background-color: #333333;  /* default gray background */
+  border: none;
+  border-radius: 5px;         /* slightly rounded corners */
 }
 
-
-
-/* Active workspace: white border, transparent inside */
 #workspaces button.focused,
 #workspaces button.active {
-  border: 1.5px solid #ffffff;
-  background-color: transparent;
-  border-radius: 3;
+  background-color: #555555;  /* lighter gray for active */
+  color: #ffffff;
 }
 
-/* Urgent workspace: red fill */
 #workspaces button.urgent {
-  background-color: #eb4d4b;
-  border-radius: 3;
+  background-color: #eb4d4b;  /* red for urgent */
+  color: #ffffff;
 }
 
-/* Modules */
+/* Modules spacing */
 #clock,
 #battery,
 #network,
 #pulseaudio,
 #custom-bluetooth,
-#custom-storage {
-  padding: 0 10px;
-  margin: 6px 3px;
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 0;
-}
-
 #window,
 #workspaces {
   margin: 0 4px;
@@ -69,25 +58,17 @@ window#waybar {
   animation: blink 0.5s linear infinite alternate;
 }
 
-
-
-
-
-
-
-
-
-/* Workspace module */
+/* Sway workspaces */
 #sway-workspaces button {
-    border: 1px solid transparent;
-    padding: 2px 6px;
-    margin: 0 2px;
-    border-radius: 3px;
-    background: #000; /* bar background */
-    color: #fff;
+  padding: 4px 10px;
+  margin: 0 2px;
+  border-radius: 6px;         /* slightly rounded corners */
+  background: #333333;        /* gray background */
+  color: #ffffff;
+  border: none;
 }
 
 #sway-workspaces button.active {
-    border: 1px solid #fff; /* white square border for active workspace */
-    font-weight: bold;
+  background: #555555;        /* lighter gray for active */
+  font-weight: bold;
 }
