@@ -17,8 +17,8 @@ window#waybar {
   color: #ffffff;
   padding: 4px 10px;          /* wider = rectangle */
   margin: 0 2px;
-  background-color: #333333;  /* default gray background */
-  border: none;
+  background-color: #000000;  /* default gray background */
+  border: 2px solid #ffffff;  /* white border */
   border-radius: 5px;         /* slightly rounded corners */
 }
 
@@ -26,11 +26,13 @@ window#waybar {
 #workspaces button.active {
   background-color: #555555;  /* lighter gray for active */
   color: #ffffff;
+  border: 1.7px solid #ffffff;  /* keep white border */
 }
 
 #workspaces button.urgent {
   background-color: #eb4d4b;  /* red for urgent */
   color: #ffffff;
+  border: 1.7px solid #ffffff;  /* keep white border */
 }
 
 /* Modules spacing */
@@ -65,10 +67,12 @@ window#waybar {
   border-radius: 6px;         /* slightly rounded corners */
   background: #333333;        /* gray background */
   color: #ffffff;
-  border: none;
+  border: 1.7px solid #ffffff;  /* white border */
 }
 
 #sway-workspaces button.active {
   background: #555555;        /* lighter gray for active */
   font-weight: bold;
+  border: 2px solid #ffffff;  /* keep white border */
 }
+
