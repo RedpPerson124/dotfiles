@@ -1,0 +1,79 @@
+/* Reset */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  min-height: 0;
+}
+
+/* Waybar window */
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+}
+
+/* Workspaces */
+#workspaces button {
+  color: #ffffff;
+  padding: 4px 10px;          /* wider = rectangle */
+  margin: 0 2px;
+  background-color: #000000;  /* default gray background */
+  border: 2px solid #ffffff;  /* white border */
+  border-radius: 5px;         /* slightly rounded corners */
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  background-color: #555555;  /* lighter gray for active */
+  color: #ffffff;
+  border: 2px solid #ffffff;  /* keep white border */
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;  /* red for urgent */
+  color: #ffffff;
+  border: 2px solid #ffffff;  /* keep white border */
+}
+
+/* Modules spacing */
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-bluetooth,
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* Critical battery blinking */
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+/* Sway workspaces */
+#sway-workspaces button {
+  padding: 4px 10px;
+  margin: 0 2px;
+  border-radius: 6px;         /* slightly rounded corners */
+  background: #333333;        /* gray background */
+  color: #ffffff;
+  border: 2px solid #ffffff;  /* white border */
+}
+
+#sway-workspaces button.active {
+  background: #555555;        /* lighter gray for active */
+  font-weight: bold;
+  border: 2px solid #ffffff;  /* keep white border */
+}
+

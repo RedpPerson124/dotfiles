@@ -1,0 +1,68 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 27,
+  "margin": "0 10 -10 10",
+  "spacing": 4,
+
+  "modules-left": ["custom/bluetooth", "clock", "pulseaudio", "sway/workspaces"],
+  "modules-center": [],
+  "modules-right": ["network", "custom/ram", "battery"],
+
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/bluetooth.sh",
+    "interval": 10,
+    "format": "{}",
+    "on-click": "blueman-manager",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "{:%H:%M %d/%m/%Y}"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}%",
+    "format-muted": "Muted",
+    "on-click": "pavucontrol",
+    "scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  "network": {
+    "format-wifi": "{essid}",
+    "format-ethernet": "{ifname} {ipaddr}",
+    "format-disconnected": "Disconnected"
+  },
+
+  "sway/workspaces": {
+    "all-outputs": true,
+    "format": "{name}"
+  },
+
+"custom/battery": {
+  "exec": "~/.config/waybar/battery.sh",
+  "interval": 1,
+  "format": "{}",
+  "format-low": "{}",
+  "tooltip": false,
+  "class": "battery"
+},
+
+"custom/ram": {
+  "exec": "~/.config/waybar/ram.sh",
+  "interval": 5,
+  "format": "{}",
+  "tooltip": false
+}
+
+
+
+
+
+
+
+
+
+}
+

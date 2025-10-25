@@ -1,0 +1,82 @@
+exec_always export XDG_CURRENT_DESKTOP=GNOME
+
+
+corner_radius 5
+exec_always --no-startup-id swayfx
+exec_always autotiling 
+
+
+# Start Waybar
+exec --no-startup-id waybar
+
+
+# Super key
+set $mod Mod4
+
+# Font
+font pango:monospace 10
+
+# Terminal + launcher
+set $term alacritty
+bindsym $mod+Return exec $term
+bindsym $mod+space exec fuzzel --prompt "Run: "
+
+
+# Basic controls
+bindsym $mod+Shift+c reload
+bindsym $mod+BackSpace kill
+
+# Borders for all windows
+for_window [class=".*"] border pixel 2
+
+# Window colors
+client.focused          #ffffff #000000 #ffffff #ffffff #ffffff
+client.focused_inactive #888888 #000000 #888888 #888888 #888888
+client.unfocused        #333333 #000000 #333333 #333333 #333333
+client.urgent           #ff0000 #000000 #ff0000 #ff0000 #ff0000
+
+# Gaps
+gaps inner 15
+gaps outer 3
+
+# Toggle maximize on Super+F11
+bindsym $mod+F11 fullscreen toggle
+
+# Workspaces 1–5
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+
+# Move focused window to workspace 1–5
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+
+# Focus movement with Alt+Ctrl+Arrows
+bindsym Alt+Ctrl+Right focus right
+bindsym Alt+Ctrl+Left  focus left
+bindsym Alt+Ctrl+Up    focus up
+bindsym Alt+Ctrl+Down  focus down
+
+# Move windows with Super+Ctrl+Arrows
+bindsym $mod+Ctrl+Right move right
+bindsym $mod+Ctrl+Left  move left
+bindsym $mod+Ctrl+Up    move up
+bindsym $mod+Ctrl+Down  move down
+
+# Borders
+default_border pixel 2
+default_floating_border pixel 2
+titlebar_border_thickness 0
+
+# Hold $mod + left mouse to move floating windows
+# Hold $mod + right mouse to resize floating windows
+floating_modifier $mod
+
+
+# Toggle tiling <-> floating
+bindsym $mod+Shift+Space floating toggle

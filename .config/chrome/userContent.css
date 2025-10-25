@@ -1,0 +1,12 @@
+@-moz-document url-prefix("http") {
+  body {
+    opacity: 0;
+    animation: fadeInPage 0.4s ease-in-out forwards;
+  }
+
+  @keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
