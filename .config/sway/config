@@ -1,9 +1,6 @@
-exec_always export XDG_CURRENT_DESKTOP=GNOME
-
-
-corner_radius 5
+corner_radius 10
 exec_always --no-startup-id swayfx
-exec_always autotiling 
+exec_always autotiling -w 1 3 5 7 9
 
 
 # Start Waybar
@@ -17,7 +14,7 @@ set $mod Mod4
 font pango:monospace 10
 
 # Terminal + launcher
-set $term alacritty
+set $term foot
 bindsym $mod+Return exec $term
 bindsym $mod+space exec fuzzel --prompt "Run: "
 
@@ -79,4 +76,8 @@ floating_modifier $mod
 
 
 # Toggle tiling <-> floating
+
+
 bindsym $mod+Shift+Space floating toggle
+
+

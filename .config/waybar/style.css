@@ -16,11 +16,11 @@ window#waybar {
 /* Workspaces */
 #workspaces button {
   color: #ffffff;
-  padding: 4px 10px;          /* wider = rectangle */
+  padding: 2px 15px;          /* wider = rectangle */
   margin: 0 2px;
   background-color: #000000;  /* default gray background */
   border: 2px solid #ffffff;  /* white border */
-  border-radius: 5px;         /* slightly rounded corners */
+  border-radius: 10px;         /* slightly rounded corners */
 }
 
 #workspaces button.focused,
@@ -63,9 +63,9 @@ window#waybar {
 
 /* Sway workspaces */
 #sway-workspaces button {
-  padding: 4px 10px;
+  padding: 2px 10px;
   margin: 0 2px;
-  border-radius: 6px;         /* slightly rounded corners */
+  border-radius: 10px;         /* slightly rounded corners */
   background: #333333;        /* gray background */
   color: #ffffff;
   border: 2px solid #ffffff;  /* white border */

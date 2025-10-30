@@ -1,8 +1,8 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
   "height": 27,
-  "margin": "0 10 -10 10",
+  "margin": "-7 20 5 20",
   "spacing": 4,
 
   "modules-left": ["custom/bluetooth", "clock", "pulseaudio", "sway/workspaces"],
