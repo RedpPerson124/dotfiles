@@ -1,10 +1,8 @@
 exec autotiling
-exec openrgb --mode static --color FFFFFF
-input "type:pointer" {
-    pointer_accel -0.5
-}
 
 
+
+bindsym Home exec pkill -USR1 waybar
 
 # screenshare and autentification in gnome programs
 
@@ -109,9 +107,5 @@ exec swayidle -w \
 
 bindsym $mod+Page_Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Page_Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-
-
-bindsym $mod+f1 exec brightnessctl set 0
-bindsym $mod+f2 exec brightnessctl set 100%
 
 

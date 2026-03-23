@@ -9,31 +9,31 @@
 
 /* Waybar window */
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
   color: #ffffff;
 }
 
 /* Workspaces */
 #workspaces button {
   color: #ffffff;
-  padding: 2px 15px;
+  padding: 2px 15px;          /* wider = rectangle */
   margin: 0 2px;
-  background-color: #000000;
-  border: 2px solid #ffffff;
-  border-radius: 10px;
+  background-color: #000000;  /* default gray background */
+  border: 2px solid #ffffff;  /* white border */
+  border-radius: 10px;         /* slightly rounded corners */
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-  background-color: #555555;
+  background-color: #555555;  /* lighter gray for active */
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2px solid #ffffff;  /* keep white border */
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: #eb4d4b;  /* red for urgent */
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2px solid #ffffff;  /* keep white border */
 }
 
 /* Modules spacing */
@@ -65,35 +65,40 @@ window#waybar {
 #sway-workspaces button {
   padding: 2px 10px;
   margin: 0 2px;
-  border-radius: 10px;
-  background: #333333;
+  border-radius: 10px;         /* slightly rounded corners */
+  background: #333333;        /* gray background */
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2px solid #ffffff;  /* white border */
 }
 
 #sway-workspaces button.active {
-  background: #555555;
+  background: #555555;        /* lighter gray for active */
   font-weight: bold;
-  border: 2px solid #ffffff;
+  border: 2px solid #ffffff;  /* keep white border */
 }
 
-/* Logout / Shutdown buttons */
+
+
+/* Logout / Shutdown buttons styled like workspaces */
 #custom-logout,
 #custom-shutdown {
   padding: 0px 18px;
   background-color: #000000;
   color: #ffffff;
   margin-left: -0.5px;
-  margin-right: -0.5px;
+  margin-right:-0.5px;
   border: 2px solid #ffffff;
   border-radius: 10px;
 }
 
+/* Hover effect (same feel as workspace focus) */
 #custom-logout:hover,
 #custom-shutdown:hover {
   background-color: #555555;
 }
 
+/* Optional: make shutdown slightly dangerous on hover */
 #custom-shutdown:hover {
   background-color: #eb4d4b;
 }
+
