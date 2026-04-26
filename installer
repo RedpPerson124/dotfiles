@@ -9,16 +9,6 @@ confirm() {
     "$@"
 }
 
-
-
-
-
-
-
-
-
-
-
 confirm "install installer dependicies?" && sudo pacman -S gum git 
 confirm "proceed with installation?" && sudo pacman -S sway waybar foot fuzzel ttf-jetbrains-mono-nerd && yay -S ttf-google-sans 
 confirm "do you want to download and install config?" && git clone https://github.com/RedpPerson124/dotfiles
