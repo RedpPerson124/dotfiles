@@ -6,7 +6,7 @@
   "spacing": 6,
   "modules-left": ["custom/bluetooth", "clock", "pulseaudio", "sway/workspaces"],
   "modules-center": [],
-  "modules-right": ["custom/shutdown", "custom/logout", "network", "custom/ram", "battery"],
+  "modules-right": ["network", "custom/ram", "battery"],
   "custom/bluetooth": {
     "exec": "~/.config/waybar/bluetooth.sh",
     "interval": 1,
@@ -37,16 +37,6 @@
     "exec": "~/.config/waybar/ram.sh",
     "interval": 1,
     "format": "{}",
-    "tooltip": false
-  },
-  "custom/logout": {
-    "format": "⏻",
-    "on-click": "swaymsg exit",
-    "tooltip": false
-  },
-  "custom/shutdown": {
-    "format": "⏼",
-    "on-click": "systemctl poweroff",
     "tooltip": false
   }
 }
