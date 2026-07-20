@@ -1,21 +1,22 @@
 exec autotiling
-exec openrgb --mode static --color FFFFFF
-input "type:pointer" {
-    pointer_accel -0.5
-}
-
-
-
-# screenshare and autentification in gnome programs
-
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec systemctl --user stop xdg-desktop-portal xdg-desktop-portal-wlr
-exec systemctl --user start xdg-desktop-portal-wlr
-
 exec --no-startup-id waybar
 
+# Outputs
+output eDP-1 mode 1920x1080@60Hz position 0 0
+output HDMI-A-1 mode 1920x1080@120Hz position 1920 0
+
+# Workspace assignments
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output eDP-1
+
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output HDMI-A-1
 
 # Super key
 set $mod Mod4
@@ -27,7 +28,6 @@ font pango:monospace 10
 set $term foot
 bindsym $mod+Return exec $term
 bindsym $mod+space exec fuzzel
-
 
 # Basic controls
 bindsym $mod+Shift+c reload
@@ -46,72 +46,77 @@ client.urgent           #ff0000 #000000 #ff0000 #ff0000 #ff0000
 gaps inner 15
 gaps outer 3
 
-# Toggle maximize on Super+F11
+# Toggle fullscreen
 bindsym $mod+F11 fullscreen toggle
 
-# Workspaces 1–5
+# Workspaces
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
-# Move focused window to workspace 1–5
+# Move focused window to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
-# Focus movement with Alt+Ctrl+Arrows
+# Focus movement
 bindsym Alt+Ctrl+Right focus right
-bindsym Alt+Ctrl+Left  focus left
-bindsym Alt+Ctrl+Up    focus up
-bindsym Alt+Ctrl+Down  focus down
+bindsym Alt+Ctrl+Left focus left
+bindsym Alt+Ctrl+Up focus up
+bindsym Alt+Ctrl+Down focus down
 
-# Move windows with Super+Ctrl+Arrows
+# Move windows
 bindsym $mod+Ctrl+Right move right
-bindsym $mod+Ctrl+Left  move left
-bindsym $mod+Ctrl+Up    move up
-bindsym $mod+Ctrl+Down  move down
+bindsym $mod+Ctrl+Left move le
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Down move down
 
 # Borders
 default_border pixel 2
 default_floating_border pixel 2
 titlebar_border_thickness 0
 
-# Hold $mod + left mouse to move floating windows
-# Hold $mod + right mouse to resize floating windows
+# Floating modifier
 floating_modifier $mod
 
-
-# Toggle tiling <-> floating
-
-
+# Toggle floating
 bindsym $mod+Shift+Space floating toggle
 
-
-
-
+# Remove borders for some apps
 for_window [app_id="org.gnome.Nautilus"] border none
-
 for_window [app_id="org.gnome.eog"] border none
 
-bindsym Control+Mod1+Delete exec wlogout 
+# Logout
+bindsym Control+Mod1+Delete exec wlogout
 
-bindsym Print exec flameshot gui
-
-exec swayidle -w \
-    timeout 300 'waybar-lock-start && swaylock' \
-    resume 'waybar-lock-stop'
+# Screenshot
+bindsym Print exec grim -g "$(slurp)" - | swappy -f -
 
 # Volume
-
 bindsym $mod+Page_Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Page_Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+# Brightness
+bindsym $mod+F1 exec brightnessctl set 0
+bindsym $mod+F2 exec brightnessctl set 100%
 
-bindsym $mod+f1 exec brightnessctl set 0
-bindsym $mod+f2 exec brightnessctl set 100%
-
-
+# Steam dialogs floating
+for_window [app_id="^steam$"] floating enable
+for_window [class="Steam"] floating enable
+for_window [title="Select Directory"] floating enable
+for_window [title="Choose File"] floating enable
+for_window [title="Open"] floating enable
