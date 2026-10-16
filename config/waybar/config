@@ -4,7 +4,7 @@
   "height": 27,
   "margin": "-7 20 5 20",
   "spacing": 6,
-  "modules-left": ["custom/bluetooth", "clock", "pulseaudio", "sway/workspaces"],
+  "modules-left": ["clock", "pulseaudio", "sway/workspaces"],
   "modules-center": [],
   "modules-right": ["network", "custom/ram", "battery"],
   "custom/bluetooth": {
