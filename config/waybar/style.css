@@ -16,11 +16,12 @@ window#waybar {
 /* Workspaces */
 #workspaces button {
   color: #ffffff;
-  padding: 2px 15px;
+  padding: 2px 6px;          /* unselected: narrower */
   margin: 0 2px;
   background-color: #000000;
   border: 2px solid #ffffff;
   border-radius: 10px;
+  transition: padding 0.15s ease;
 }
 
 #workspaces button.focused,
@@ -28,6 +29,7 @@ window#waybar {
   background-color: #555555;
   color: #ffffff;
   border: 2px solid #ffffff;
+  padding: 2px 15px;         /* selected: same width as before */
 }
 
 #workspaces button.urgent {
@@ -59,22 +61,6 @@ window#waybar {
   background-color: #f53c3c;
   color: #ffffff;
   animation: blink 0.5s linear infinite alternate;
-}
-
-/* Sway workspaces */
-#sway-workspaces button {
-  padding: 2px 10px;
-  margin: 0 2px;
-  border-radius: 10px;
-  background: #333333;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-}
-
-#sway-workspaces button.active {
-  background: #555555;
-  font-weight: bold;
-  border: 2px solid #ffffff;
 }
 
 /* Logout / Shutdown buttons */
